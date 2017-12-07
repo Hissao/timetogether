@@ -4,17 +4,23 @@
       <p class="h2"><%= @first_name %></p>
       &
       <p class="h2"><%= @second_name %></p>
-      <h3>O tempo junto é de:</h3>
+      <h3>Ficariam juntos por:</h3>
       <br>
       <div class="result rounded">
         <% if @years > 0 %>
-          <span><%= pluralize(@years, 'ano', 'anos')%> </span>
+          <span><%= pluralize(@years, 'ano ', 'anos ')%> </span>
         <% end %>
         <% if @months > 0 %>
-          <span><%= pluralize(@months, 'mês', 'meses')%></span>
+          <% if @years > 0 %>
+          e
+          <% end %>
+          <span><%= pluralize(@months, 'mês ', 'meses ')%></span>
         <% end %>
         <% if @days > 0 %>
-          <span><%= pluralize(@days, 'dia', 'dias')%> </span>
+          <% if @years > 0 || @months > 0 %>
+          e
+          <% end %>
+          <span><%= pluralize(@days, 'dia ', 'dias ')%> </span>
         <% end %>
       </div>
       <br>
