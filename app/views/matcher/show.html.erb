@@ -1,0 +1,21 @@
+<div class="container-fluid col-md-6 matcher">
+  <div class="row-fluid">
+    <div class="centering text-center">
+      <h1>Resultado</h1>
+      <p><%= @first_name %> e <%= @second_name %></p>
+      <% if @years > 0 %>
+        <span><%= pluralize(@years, 'ano', 'anos')%> </span>
+      <% end %>
+      <% if @months > 0 %>
+        <span><%= pluralize(@months, 'mes', 'meses')%></span>
+      <% end %>
+      <% if @days > 0 %>
+        <span><%= pluralize(@days, 'dia', 'dias')%> </span>
+      <% end %>
+      <span>juntos!</span>
+      <br>
+      <br>
+      <p><%= link_to "Testar novamente", matcher_new_url(first_name: @first_name, second_name: @second_name), class: 'btn btn-outline-dark' %></p>
+    </div>
+  </div>
+</div>
