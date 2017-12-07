@@ -6,7 +6,7 @@ class MatcherController < ApplicationController
 
   def show
     @first_name = params[:matcher][:first_name].capitalize.presence || 'Ricardão'
-    @second_name = params[:matcher][:second_name].capitalize.presence || 'Tchuchuca'
+    @second_name = params[:matcher][:second_name].capitalize.presence || 'Tchutchuca'
     key = [@first_name, @second_name].sort.sum
     time_together = calculate_time(key).zero? ? 1 : calculate_time(key)
 
