@@ -11,8 +11,8 @@ class MatcherController < ApplicationController
     time_together = calculate_time(key).zero? ? 1 : calculate_time(key)
 
     @years = time_together / 360
-    @months = time_together % 360 / 12
-    @days = time_together % 360 % 12
+    @months = time_together % 30 / 12
+    @days = time_together % 30 % 12
   end
 
   # Try to get first 4 numbers of generated hash
