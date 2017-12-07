@@ -22,11 +22,20 @@ html, body {
 
 .row-fluid {
   height: 100%;
-  display:table-cell;
+  display: table-cell;
   vertical-align: middle;
 }
 
 .centering {
-  float:none;
-  margin:0 auto;
+  float: none;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.result {
+  background-color: #555;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 30px;
+  width: 80%;
 }
