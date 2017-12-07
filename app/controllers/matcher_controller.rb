@@ -7,7 +7,8 @@ class MatcherController < ApplicationController
   def show
     @first_name = params[:matcher][:first_name].capitalize.presence || 'Ricardão'
     @second_name = params[:matcher][:second_name].capitalize.presence || 'Tchuchuca'
-    time_together = calculate_time(@first_name + @second_name)
+    key = [@first_name, @second_name].sort.sum
+    time_together = calculate_time(key)
 
     @years = time_together / 360
     @months = time_together % 360 / 12
