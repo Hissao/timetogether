@@ -1,30 +1,19 @@
 <div class="container-fluid col-md-6 matcher">
   <div class="row-fluid">
-    <div class="centering text-center">
-      <p class="h2"><%= @first_name %></p>
-      &
-      <p class="h2"><%= @second_name %></p>
-      <h3>Ficariam juntos por:</h3>
-      <br>
-      <div class="result rounded">
-        <% if @years > 0 %>
-          <span><%= pluralize(@years, 'ano ', 'anos ')%> </span>
-        <% end %>
-        <% if @months > 0 %>
-          <% if @years > 0 %>
-          e
-          <% end %>
-          <span><%= pluralize(@months, 'mês ', 'meses ')%></span>
-        <% end %>
-        <% if @days > 0 %>
-          <% if @years > 0 || @months > 0 %>
-          e
-          <% end %>
-          <span><%= pluralize(@days, 'dia ', 'dias ')%> </span>
-        <% end %>
+    <div class="centering text-center centering-show">
+      <h1 class="h2 show-names"><%= @first_name %> & <%= @second_name %></h1>
+      <div class="result">
+        <div class="form-row">
+          <div class="col"><%= @years > 1 ? 'Anos' : 'Ano' %></div>
+          <div class="col"><%= @months > 1 ? 'Meses' : 'Mês' %></div>
+          <div class="col"><%= @months > 1 ? 'Dias' : 'Dia' %></div>
+        </div>
+        <div class="form-row">
+          <div class="col"><%= @years %></div>
+          <div class="col"><%= @months %></div>
+          <div class="col"><%= @days %></div>
+        </div>
       </div>
-      <br>
-      <br>
       <p><%= link_to "Calcular novamente", matcher_new_url(first_name: @first_name, second_name: @second_name), class: 'btn btn-secondary' %></p>
     </div>
   </div>

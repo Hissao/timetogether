@@ -1,20 +1,17 @@
-<div class="container-fluid col-md-6 matcher">
+<div class="container-fluid col-md-4 matcher">
   <div class="row-fluid">
     <div class="centering text-center">
-      <h2>Por quanto tempo ficariam juntos?</h2>
-      <br>
-      <br>
+      <h1 class="h4">Por quanto tempo ficariam juntos?</h1>
       <%= form_for :matcher, url: matcher_show_url, method: :get do |form| %>
-        <div class="form-row">
+        <div class="form-row form-row-new">
           <div class="col">
-            <%= form.text_field :first_name, value: @first_name, placeholder: 'Primeira pessoa', class: 'form-control' %>
+            <%= form.text_field :first_name, value: @first_name, placeholder: '1ª pessoa', class: 'form-control' %>
           </div>
+          <div class="col"></div>
           <div class="col">
-            <%= form.text_field :second_name, value: @second_name, placeholder: 'Segunda pessoa', class: 'form-control'  %>
+            <%= form.text_field :second_name, value: @second_name, placeholder: '2ª pessoa', class: 'form-control'  %>
           </div>
         </div>
-        <br>
-        <br>
         <p><%= form.submit 'Calcular', class: 'btn btn-secondary btn-lg'%></p>
       <% end  %>
       <br>
