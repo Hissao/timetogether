@@ -1,3 +1,24 @@
+<%
+time_together = ''
+
+if @years > 0
+  time_together += pluralize(@years, 'ano ', 'anos ')
+end
+
+if @months > 0
+  if @years > 0
+    time_together += 'e '
+  end
+  time_together += pluralize(@months, 'mês ', 'meses ')
+end
+
+if @days > 0
+  if @years > 0 || @months > 0
+    time_together += 'e '
+  end
+  time_together += pluralize(@days, 'dia ', 'dias ')
+end
+%>
 <div class="container-fluid col-md-6 matcher">
   <div class="row-fluid">
     <div class="centering text-center centering-show">
@@ -14,7 +35,7 @@
           <div class="col"><%= @days %></div>
         </div>
       </div>
-      <%= social_share_button_tag('Tempo Juntos') %>
+      <%= social_share_button_tag("O tempo que #{@first_name} e #{@second_name} ficariam caso se relacionassem hoje é de #{time_together}") %>
       <br>
       <p><%= link_to "Calcular novamente", matcher_new_url(first_name: @first_name, second_name: @second_name), class: 'btn btn-secondary' %></p>
     </div>
