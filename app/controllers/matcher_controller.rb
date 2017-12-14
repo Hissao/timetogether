@@ -5,8 +5,8 @@ class MatcherController < ApplicationController
   end
 
   def show
-    @first_name = params[:matcher][:first_name].titleize.presence || 'Ricardão'
-    @second_name = params[:matcher][:second_name].titleize.presence || 'Cremosa'
+    @first_name = params[:matcher][:first_name].strip.titleize.presence || 'Ricardão'
+    @second_name = params[:matcher][:second_name].strip.titleize.presence || 'Cremosa'
 
     key = [@first_name, @second_name].sort.sum
     time_together = calculate_time(key).zero? ? 1 : calculate_time(key)
