@@ -2,7 +2,7 @@
   <div class="row-fluid">
     <div class="centering text-center">
       <h1 class="h4">Por quanto tempo ficariam juntos?</h1>
-      <%= form_for :matcher, url: matcher_show_url, method: :get do |form| %>
+      <%= form_for :matcher, url: matcher_show_url, method: :get, enforce_utf8: false do |form| %>
         <div class="form-row form-row-new">
           <div class="col">
             <%= form.text_field :first_name, value: @first_name, placeholder: '1ª pessoa', class: 'form-control' %>
