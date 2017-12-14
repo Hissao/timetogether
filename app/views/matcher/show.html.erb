@@ -18,6 +18,8 @@ if @days > 0
   end
   time_together += pluralize(@days, 'dia ', 'dias ')
 end
+
+share_message = "O tempo que #{@first_name} e #{@second_name} ficariam caso se relacionassem hoje é de #{time_together}"
 %>
 <div class="container-fluid col-md-6 matcher">
   <div class="row-fluid">
@@ -27,7 +29,7 @@ end
         <div class="form-row">
           <div class="col"><%= @years > 1 ? 'Anos' : 'Ano' %></div>
           <div class="col"><%= @months > 1 ? 'Meses' : 'Mês' %></div>
-          <div class="col"><%= @months > 1 ? 'Dias' : 'Dia' %></div>
+          <div class="col"><%= @days > 1 ? 'Dias' : 'Dia' %></div>
         </div>
         <div class="form-row">
           <div class="col"><%= @years %></div>
@@ -35,7 +37,7 @@ end
           <div class="col"><%= @days %></div>
         </div>
       </div>
-      <%= social_share_button_tag("O tempo que #{@first_name} e #{@second_name} ficariam caso se relacionassem hoje é de #{time_together}", desc: 'Quanto tempo juntos ficariam?') %>
+      <%= social_share_button_tag(share_message, desc: share_message) %>
       <br>
       <p><%= link_to "Calcular novamente", matcher_new_url(first_name: @first_name, second_name: @second_name), class: 'btn btn-secondary' %></p>
     </div>
